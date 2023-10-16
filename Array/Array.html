@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    
+    </style>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <p>Grocery List</p>
+
+    <div class="list-input-grid">
+      <input onkeydown="" placeholder="Items"
+        class="js-name-input name-input">
+      
+      <button onclick="
+        addTodo();
+      " class="add-todo-button">Add</button>
+    </div>
+
+    <div class="js-todo-list todo-grid"></div>
+
+    
+    <script>
+     const itemList = [];
+
+renderTodoList();
+
+function renderTodoList() {
+  let todoListHTML = '';
+
+  for (let i = 0; i < itemList.length; i++) {
+    const itemObject = itemList[i];
+    const { name } = itemObject;
+    const html = `
+      <div>${name}</div>
+      <button onclick="
+        itemList.splice(${i}, 1);
+        renderTodoList();
+      " class="delete-todo-button">Delete</button> 
+    `;
+    todoListHTML += html;
+  }
+
+  document.querySelector('.js-todo-list')
+    .innerHTML = todoListHTML;
+}
+
+function addTodo() {
+  const inputElement = document.querySelector('.js-name-input');
+  const name = inputElement.value;
+
+
+
+  itemList.push({
+    name
+  });
+
+  inputElement.value = '';
+
+  renderTodoList();
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+     body{
+      background: black;
+      color: azure;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 3vw;
+     }
+      .head-button {
+        background-color: rgb(178, 176, 176);
+        border-radius: 100%;
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 1vw;
+      }    
+      .tail-button{
+        background-color: rgb(178, 176, 176);
+        border-radius: 100%;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        margin-right: 1vw;
+      }
+      .reset-button{
+        background-color: rgb(255, 255, 255);
+        color: red;
+        border-radius: 100%;
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 1vw;
+      }
+    </style>
+    <title>Coin Toss</title>
+  </head>
+  <body>
+    <p>Heads or Tail?</p>
+    <button onclick="
+      playGame('Head');
+      "
+      class="head-button" 
+    >Heads</button>
+
+    <button onclick="
+      playGame('Tail');
+    "
+    class="tail-button"
+    > Tails </button>
+
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.Tails = 0;
+      score.Heads = 0;
+      updateScoreData();
+      localStorage.removeItem('score');  
+    "
+    class="reset-button"
+    >Reset </button>
+
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+    <p class ="js-counter"></p>
+
+    <script src="Scripts/coinToss.js">
+     
+    </script>
+  </body>
+</html>

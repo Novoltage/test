@@ -1,0 +1,30 @@
+
+body{
+    background: black;
+    color: azure;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 3vw;
+   }
+    .head-button {
+      background-color: rgb(178, 176, 176);
+      border-radius: 100%;
+      padding: 10px;
+      cursor: pointer;
+      margin-right: 1vw;
+    }    
+    .tail-button{
+      background-color: rgb(178, 176, 176);
+      border-radius: 100%;
+      padding: 10px;
+      cursor: pointer;
+      margin-right: 1vw;
+    }
+    .reset-button{
+      background-color: rgb(255, 255, 255);
+      color: red;
+      border-radius: 100%;
+      padding: 10px;
+      cursor: pointer;
+      margin-right: 1vw;
+    }
