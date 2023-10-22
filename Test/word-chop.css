@@ -1,0 +1,21 @@
+/*
+All css for Word Guesser
+*/
+.word{
+
+    font: Arial;
+    font-size: Auto;
+    
+}
+
+.off{
+    display: none;
+}
+
+.letters{
+    font-family: monospace;
+    font-size: Auto;
+    margin: auto;
+    display: block;
+}
+

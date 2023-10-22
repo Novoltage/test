@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-    
-    </style>
-    <title>Record A1C</title>
+    <link rel="stylesheet" href="word-chop.css"/>
+    <title>Wordchop</title>
   </head>
   <body>
     <h1>Word chop</h1>
 
 
      <div>
+<div id="word" class="word">
     <input placeholder="Choose Your Word" class="Word-Choice">
+    <input placeholder="Hint?" class="hint">
     <button onclick="wordGenerator()">Ready?</button>
+</div>
 
-
-<P class="stage2">
+<div id="letters" class="off">
     <button onclick="guess('A')" >A</button>
     <button onclick="guess('B')" >B</button>
     <button onclick="guess('C')">C</button>
@@ -43,7 +43,8 @@
     <button onclick="guess('Y')">Y</button>
     <button onclick="guess('Z')">Z</button>
     <button onclick="test()">Test</button>
-     </P>
+    <button onclick="reset()">Reset</button>
+</div>
   </div>
 <p class="Print"> </p>    
 
