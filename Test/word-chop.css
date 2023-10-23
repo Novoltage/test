@@ -19,3 +19,17 @@ All css for Word Guesser
     display: block;
 }
 
+.disable{
+    pointer-events: none;
+    opacity: 40%;
+}
+
+.letterBox{
+    border: solid;
+    
+}
+
+.guessBox{
+    display: grid;
+    grid-row: auto;
+}
