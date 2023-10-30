@@ -13,21 +13,23 @@ function wordGenerator(){
 const inputElement = document.querySelector(".Word-Choice");
 const inputElement2 = document.querySelector(".hint");
 let Word = inputElement.value;
+Word = Word.replace(" ", "");
 Word = Word.toUpperCase();
 const Hint =inputElement2.value;
 
 for (let i = 0; i < Word.length; i++) {
 const a = Word.slice(i, (i+1));
 guessWord.push(a);
-const element = document.createElement('div'); //div creator
+const element = document.createElement('div'); //div creator(creates a container for each letter)
 element.id = `${i+1}`;
 element.className = 'letterBox';
-element.innerHTML = ' ';
+element.innerHTML = '_';
 document.getElementById("guessBox").appendChild(element);
 }
 document.querySelector(".Print").innerHTML = Hint;
 document.getElementById("letters").classList.replace("off", "letters");
 document.getElementById("word").classList.replace("word", "off")
+document.getElementById("hintBox").classList.replace("off", "hintBox")
 }
 
 
@@ -37,7 +39,8 @@ document.getElementById("word").classList.replace("word", "off")
 function reset(){
   guessWord =[''];
   wordChecker = [''];
-  life = 5
+  life = 5;
+  location.reload(true);
 }
 
 function test(){
@@ -74,7 +77,6 @@ if(i === -1 && c ===0){
   wordChecker[i] = guessWord[i];
   c++;
   if(i>0){
-    console.log(`${i}`)
   document.getElementById(`${i}`).innerHTML = `${guessWord[i]}`;//adds right guesses to guess box
   }
 }
