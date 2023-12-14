@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    
+    </style>
+    <title>Record A1C</title>
+  </head>
+  <body>
+    
+    <h1>A1C</h1>
+    
+    <button onclick="handleChoice('rock')">rock</button>
+    
+
+    <script>
+        let setCompMove =''
+
+    function cpMove() {
+    const randomNumber = Math.random();
+    
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+       setCompMove ='paper';
+
+   } else if (randomNumber >= 2 / 3) {
+       setCompMove ='rock';
+
+   } else {
+       setCompMove='scissor';
+   }
+}
+function handleChoice(playerMove){
+
+   cpMove();
+   handleLogic(playerMove);
+}
+
+function handleLogic(playerMove){
+setResult ='';
+   //player move is rock
+   if (playerMove === 'rock') {
+       if(setCompMove === 'scissor'){
+       setResult='win';
+       }
+       else if (playerMove === setCompMove) {
+           setResult ='tie';
+       } else {
+           setResult='lost';
+       }
+   }
+/*
+   //player move is scissor
+   if (playerMove === 'scissor' && compMove === 'paper') {
+       setResult('win')
+       if (playerMove === compMove) {
+           setResult('tie')
+       } else {
+           setResult('lost')
+       }
+   }
+
+   //player move is paper
+   if (playerMove === 'paper' && compMove === 'scissor') {
+       setResult('win')
+       if (playerMove === compMove) {
+           setResult('tie')
+       } else {
+           setResult('lost')
+       }
+   };
+*/
+
+   console.log( "player chose " + playerMove)
+   console.log("comp chose " + setCompMove)
+   console.log( "you " + setResult)
+};
+
+    </script>
+  </body>
+</html>
+
+

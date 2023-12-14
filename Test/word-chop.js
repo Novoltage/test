@@ -29,7 +29,10 @@ document.getElementById("guessBox").appendChild(element);
 document.querySelector(".Print").innerHTML = Hint;
 document.getElementById("letters").classList.replace("off", "letters");
 document.getElementById("word").classList.replace("word", "off")
+document.getElementById("tbanner").classList.replace("tbanner", "off")
+
 document.getElementById("hintBox").classList.replace("off", "hintBox")
+
 }
 
 
@@ -83,24 +86,28 @@ if(i === -1 && c ===0){
 document.getElementById(`${letter}`).classList.add("disable");
 
 if(wordChecker.toString() === guessWord.toString()){ //win condition
-  document.querySelector(".Print").innerHTML = 'You win!';
-  alert("You Win!")
-  reset();
+  document.querySelector(".Print").innerHTML = `You win! Good Job Guessing the word ${aRandomWord}`;
+  //alert("You Win!")
+  //reset();
   setTimeout(function(){
-    window.location.reload();
- }, 3000);
+    reset();
+ }, 5000);
   //location.reload(true);
   
 
 }else if (life ===0){ //lose condition
-  document.querySelector(".Print").innerHTML = 'You lose!';
-  alert("You Lose!")
-  reset();
+  document.querySelector(".Print").innerHTML = `You lose! The word was ${aRandomWord}`;
+  //alert(`You Lose! The word was ${aRandomWord}`)
+  //reset();
   setTimeout(function(){
-    window.location.reload();
- }, 3000);
-  //location.reload(true)
+    reset();
+ }, 5000);
 }
 }
 
+}
+
+function directHome(){
+
+  window.location.href= 'word-chop-home.html';
 }
